@@ -1,0 +1,27 @@
+<div class="login-form mt-5">
+        <div class="panel">
+            <h2>Login</h2>
+        </div>
+        <form id="Login" class="form form-login" [formGroup]="loginForm" name="loginForm" (ngSubmit)="login()" >
+            <div class="form-group">
+                <input type="text" formControlName="loginUsername" required autofocus minlength="5" 
+                class="form-control" id="login-email" placeholder="Korisničko ime" name="username">
+            </div>
+
+            <div class="form-group">
+                <input type="password" formControlName="loginPassword" required minlength="8" 
+                class="form-control" id="login-password" placeholder="Lozinka" name="password">
+            </div>
+
+            <div *ngIf="invalidLogin" class="alert alert-danger m-auto">
+                <p>Invalid username or password</p>
+                <b>{{errorMessage}}</b>
+            </div>
+
+            <div class="forgot">
+                <a [routerLink]="'/resetPassword'">Forgot password?</a>
+            </div>
+            
+            <button type="submit" class="btn btn-outline-primary">Login</button>
+        </form>
+</div>

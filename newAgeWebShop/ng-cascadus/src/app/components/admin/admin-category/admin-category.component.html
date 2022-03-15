@@ -1,0 +1,169 @@
+<div class="row">
+    <div class="col-8 text-center">
+        <h2>Categories</h2>
+        <hr>
+        <div>
+            <input type="checkbox" class="checkbox" id="toggleActive" (change)="OnShowActiveChange($event)" />
+            <label id="lblToggleActive" for="toggleActive">Show inactive</label>
+        </div>
+        <div>
+            <button (click)="addCategoryBtn($event)" id="addCategoryBtn" class="btn btn-lg btn-primary col-xs-12 ">New Category</button>
+        </div>
+        <table id="productsTable" class="table table-responsive table-hover text-center m-0 p-0" style="overflow-y: scroll; height: 80vh; width: 60%;">
+            <thead style="background-color: #333; color: orange;">
+                <tr>
+                    <th>Id</th>
+                    <th>Category name</th>
+                    <th>Active</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr *ngFor="let cat of categories | async">
+                    <td>{{cat.id}}</td>
+                    <td>{{cat.naziv}}</td>
+                    <td>
+                        <div *ngIf="cat.izbrisano;else other_active_state">
+                            <i class="material-icons red">event_busy</i>
+                        </div>
+
+                        <ng-template #other_active_state>
+                            <i class="material-icons green">event_available</i>
+                        </ng-template>
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <button id="editCategoryBtn{{cat.id}}" value="{{cat.id}}"
+                                (click)="editCategoryBtn($event, cat.id)"
+                                class="btn btn-sm btn-outline-success">Edit</button>
+
+                            <button id="removeCategoryBtn{{cat.id}}" value="{{cat.id}}"
+                                (click)="removeCategoryBtn($event, cat.id)"
+                                class="btn btn-sm btn-outline-danger">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add card -->
+    <div id="addCategoryForm" class="card card-body m-2 col-3" *ngIf="addCategoryFormShown">
+        <form [formGroup]="addCategoryForm">
+            <div class="card-header">
+                <h5>Add New Category</h5>
+            </div>
+            <div class="card-body">
+                <!-- NAME -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Category Name:</span>
+                    </div>
+                    <input formControlName="addName" required type="text" class="form-control" minlength="3"
+                        maxlength="50" name="name" id="AddName" aria-describedby="basic-addon3">
+                </div>
+            </div>
+            <div class="card-footer">
+                <button id="addCategoryFormCancel" type="button" (click)="OnAddCategoryCancel()"
+                    class="btn btn-outline-secondary">Close</button>
+                <button id="addCategoryFormConfirm" type="button" (click)="OnAddCategoryConfirm()"
+                    class="btn btn-primary">Add</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Edit card -->
+    <div id="editCategoryForm" class="card card-body m-2  my-0 col-3" *ngIf="editCategoryFormShown">
+        <form [formGroup]="editCategoryForm">
+            <div class="card-header">
+                <h5>Edit item</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div id="editModalItemInfo">
+                            <!-- ID -->
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">ID:</span>
+                                </div>
+                                <input readonly type="text" class="form-control" minlength="1" maxlength="50" name="id"
+                                    id="editId" formControlName="editId" name="editId" aria-describedby="basic-addon3">
+                            </div>
+
+                            <!-- NAME -->
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Name:</span>
+                                </div>
+                                <input type="text" class="form-control" minlength="3" maxlength="50"
+                                    formControlName="editName" name="editName" id="editName"
+                                    aria-describedby="basic-addon3">
+                            </div>
+
+                            <!-- Active -->
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" name="editActive" formControlName="editActive"
+                                    class="custom-control-input" id="editActive">
+                                <label class="custom-control-label" for="editActive">Inactive</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button id="btnEditCancel" (click)="OnEditCategoryCancel()"
+                    class="btn btn-outline-secondary">Close</button>
+                <button id="btnEditSubmit" (click)="OnEditCategoryConfirm()" class="btn btn-success ">Save</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Remove card -->
+    <div id="removeCategoryForm" class="card card-body m-2 my-0 col-3" *ngIf="removeCategoryFormShown">
+        <form [formGroup]="removeCategoryForm">
+            <div class="card-header">
+                <h5>Remove item</h5>
+            </div>
+            <div class="card-body">
+                <!-- ID -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">ID:</span>
+                    </div>
+                    <input readonly formControlName="removeId" type="text" class="form-control" minlength="1"
+                        maxlength="50" name="removeId" id="removeId" aria-describedby="basic-addon3" value=""
+                        placeholder="">
+                </div>
+
+                <!-- NAME -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Name:</span>
+                    </div>
+                    <input readonly required formControlName="removeName" type="text" class="form-control" minlength="3"
+                        maxlength="50" name="removeName" id="removeName" value="" aria-describedby="basic-addon3">
+                </div>
+
+                <!-- Active -->
+                <div class="custom-control custom-checkbox">
+                    <input readonly type="checkbox" formControlName="removeActive" name="removeActive"
+                        class="custom-control-input" id="removeActive">
+                    <label class="custom-control-label" for="removeActive">Inactive &nbsp;<small>(if checked - item will
+                            not
+                            be used)</small></label>
+                </div>
+
+            </div>
+            <div class="card-footer">
+                <h5 class="text-danger">You won't be able to undo this action.
+                    Please check if this item is the one you want to remove.</h5>
+                <button id="btnRemoveCancel" (click)="OnRemoveCategoryCancel()"
+                    class="btn btn-outline-secondary">Close</button>
+                <button id="btnRemoveSubmit" (click)="OnRemoveCategoryConfirm()" type="submit"
+                    class="btn btn-danger">Remove</button>
+            </div>
+        </form>
+    </div>
+</div>

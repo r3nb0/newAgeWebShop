@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="mailkit" Version="2.10.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="3.1.14" />
+    <PackageReference Include="mimekit" Version="2.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cascadus.DAL\Cascadus.DAL.csproj" />
+    <ProjectReference Include="..\Cascadus.Model\Cascadus.Model.csproj" />
+  </ItemGroup>
+
+</Project>

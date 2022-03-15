@@ -1,0 +1,45 @@
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    min-height: 100vh;
+    height: 100vh;
+    image-rendering: optimizeSpeed;
+    padding-bottom: 50px;
+    padding-top: 50px; 
+  }
+  @media only screen and (max-device-width: 1366px) {
+    .parallax {
+      background-attachment: scroll;
+      min-height: 600px;
+    }
+  }
+  .tile {
+      height: 30vh;
+  }
+
+  .zoom-on-hover {
+    transition: all 2s ease-in-out;
+    color: orange;
+  }
+  .zoom-on-hover :hover{
+    transform: scale(1.12);
+    color:orange;
+  }
+
+
+  .contact-img {
+    background-repeat: no-repeat;
+    image-rendering: optimizeSpeed;
+    background-size: cover;
+    width: 100%;
+    background-position: center;
+    background-attachment: scroll;
+}
+.contact-img-1{
+    background-image: url("../../../../assets/svg/undraw_contact.svg");
+    image-rendering: optimizeSpeed;
+}
+  

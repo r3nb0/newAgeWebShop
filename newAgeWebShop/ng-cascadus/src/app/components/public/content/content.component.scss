@@ -1,0 +1,181 @@
+.content-spacer {
+    margin-top: 10%;
+}
+@media only screen and (min-width: 650px) {
+    .content-spacer {
+        margin-top: 5%;
+    }
+  }
+
+  .parallax-header {
+      position: absolute;
+      color: white;
+      margin-top: 5cm;
+  }
+  
+  .parallax-carousel {
+      min-height: 50vh;
+      height: 50vh;
+      image-rendering: optimizeSpeed;
+  }
+  .landing-carousel-item {
+      height: 65vh;
+  }
+
+.parallax1{
+    min-height: 650px; 
+    background-image: url('/assets/work.jpg');
+    image-rendering: optimizeSpeed;
+}
+
+.parallax2{
+    min-height: 550px; 
+    background-image: url('/assets/svg/undraw_offerings.svg');
+    image-rendering: optimizeSpeed;
+}
+
+.parallax3{
+    min-height: 650px; 
+    background-image: url('/assets/svg/undraw_walking.svg');
+    image-rendering: optimizeSpeed;
+}
+  .w-3{
+      width: 33%;
+  }
+  .animate-opacity {
+    animation: opac 0.8s;
+}
+  .wide-letter-spacing {
+      letter-spacing: 6px;
+  }
+  .display-middle {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+.scrolldown {
+    bottom: 5px;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+}
+.scrolldown-animated {
+    animation: animate 1.5s linear infinite;
+}
+@keyframes animate {
+    0%{
+        top: -10px;
+        left: -10px;
+        opacity: 0.2;
+    }
+    50%{
+        top: 0px;
+        left: 0px;
+        opacity: 1;
+    }
+    100%{
+        top: 10px;
+        left: 10px;
+        opacity: 0.2;
+    }
+}
+
+.material-icon-large {
+    font-size: 68px;
+}
+
+.bg-gray {
+    background-color: #333;
+}
+
+.card-mod {
+    background: rgba(122, 130, 136, 0.2)!important;
+}
+.card-mod .card-body {
+    background: rgba(122, 130, 136, 0.2)!important;
+}
+.card-mod .card-header {
+    background: rgba(122, 130, 136, 0.2)!important;
+}
+.card-mod .card-footer {
+    background: rgba(122, 130, 136, 0.2)!important;
+}
+.testimonial-card{
+    min-height: 300px;
+    width: 350px;
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.3);
+    display: flex;
+    flex-flow: column;
+    justify-content:space-between;
+  }
+  .testimonial-card:hover{
+      transform: scale(1.15);
+  }
+
+  .testimonial-card .text{
+    padding: 2.2em;
+    line-height: 1.7em;
+    position: relative;
+    font-size: 18px;
+  }
+
+  .testimonial-card .image{
+    background-color:tomato;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 5px solid orange;
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    display:flex;
+    justify-content:center;
+  } 
+  
+#testimonies:nth-child(3) .testimonial-card .footer .image{
+  background:no-repeat center/cover url(
+      https://image.shutterstock.com/image-photo/portrait-beautiful-hispanic-woman-smiling-260nw-1640963581.jpg);
+      image-rendering: optimizeSpeed;
+}
+
+#testimonies:nth-child(4) .testimonial-card .footer .image{
+  background:no-repeat center/cover url(
+      https://image.shutterstock.com/image-photo/portrait-attractive-man-smiling-confident-260nw-1629683515.jpg);
+      image-rendering: optimizeSpeed;
+}
+
+  .testimonial-card .footer{
+    background: black;
+    height: 5em;
+    border-radius: 0 0 10px 10px;
+    position:relative;
+  }
+  
+  .testimonial-card .quote{
+    font-size: 400%;
+    float: right;
+    opacity: .1;
+    transform: rotate(10deg) translate(-10px, -40px);
+   color:#4D3FA3;
+  }
+  
+  .testimonial-card .person{
+    color:white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    font-size:1.25em;
+    font-weight: 500;
+  }
+  .opacity-1 {
+    opacity: 0.9;
+  }

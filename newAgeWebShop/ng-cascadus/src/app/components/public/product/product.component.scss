@@ -1,0 +1,192 @@
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media only screen and (max-device-width: 1600px) {
+  .parallax {
+    background-attachment: scroll;
+    min-height: 600px;
+  }
+}
+
+.parallax4 {
+    min-height: 650px; 
+    background-image: url('/assets/svg/undraw_remember.svg');
+    image-rendering: optimizeSpeed;
+}
+
+.position-down-pc {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+}
+
+.position-down-pc-sub {
+  position: absolute;
+  left: 10%;
+  bottom: 50%;
+}
+
+.position-down-mobile {
+  position: absolute;
+  left: 8%;
+  top: 0.2rem;
+}
+
+.position-down-mobile-sub {
+  position: absolute;
+  width: 70%;
+  overflow-wrap: break-word;
+  left: 9%;
+  top: 0.8rem;
+}
+
+.tile {
+  height: 40rem;
+}
+
+.line-height-spaced {
+  line-height: 2.5rem;
+}
+
+.scrolldown-animated {
+  animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+      top: -10px;
+      left: -10px;
+      opacity: 0.2;
+  }
+
+  50% {
+      top: 0px;
+      left: 0px;
+      opacity: 1;
+  }
+
+  100% {
+      top: 10px;
+      left: 10px;
+      opacity: 0.2;
+  }
+}
+
+.shadow {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .3);
+}
+
+.position-bottom-center {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 40%;
+}
+
+@media screen and (min-device-width: 768px) {
+  .position-bottom-center {
+      position: absolute;
+      bottom: 0.5rem;
+      left: 48.5%;
+  }
+}
+
+.floating-add-to-cart {
+  position: fixed;
+  bottom: 2em;
+  right: 1.5em;
+  height: 3rem;
+  width: auto;
+  border-radius: 25px;
+  background-color: #ffcc00;
+  border-color: #ffcc00;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+.landing-background-image {
+  background-image: url("../../../../assets/mavic-air/mavic-air-2-landing-background.jpg");
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-attachment: fixed;
+  background-size: cover;
+  image-rendering: optimizeSpeed;
+}
+
+.background-camels {
+  background-image: url("../../../../assets/mavic-air/deve-pustinja.jpg");
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-attachment: fixed;
+  background-size: cover;
+  image-rendering: optimizeSpeed;
+}
+
+.background-camels-zoom {
+  background-image: url("../../../../assets/mavic-air/deve-pustinja-2.jpg");
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-attachment: fixed;
+  background-size: cover;
+  image-rendering: optimizeSpeed;
+}
+
+@media only screen and (max-device-width: 1200px) {
+  .background-camels {
+      background-image: url("../../../../assets/mavic-air/deve-pustinja.jpg");
+      background-repeat: no-repeat;
+      background-attachment: local;
+      background-size: contain;
+      image-rendering: optimizeSpeed;
+  }
+
+  .background-camels-zoom {
+      background-image: url("../../../../assets/mavic-air/deve-pustinja-2.jpg");
+      background-repeat: no-repeat;
+      background-attachment: local;
+      background-size: contain;
+      image-rendering: optimizeSpeed;
+  }
+}
+
+.mavic-air-2-naslovna-podazina {
+  background-image: url('../../../../assets/mavic-air/pexels-jeremy-bishop-2524874.jpg'); 
+  image-rendering: optimizeSpeed;
+  object-fit: fill;
+}
+.mavic-air-2-tile {
+  height: 40vh;
+  background-color: rgba(255, 255, 255, 0.15); 
+  border-color: white;
+}
+
+.prakticnost-cover-mobile {
+  background: url('../../../../assets/osmo/prakticnost.jpg') 
+  no-repeat center center/cover; width: 100%; height: 35vh;
+}
+.osmo-landing-cover {
+  background: url('../../../../assets/osmo/osmo-home.jpg') 
+  no-repeat 55% center/cover; width: 100%; height: 65vh;
+}
+.osmo-lending-heading-2-bottom-mobile {
+    text-align: left;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    top: 45%;
+    left: 6%;
+}
+
+.osmo-lending-heading-2-bottom-pc {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 40px;
+  top: 50%;
+}

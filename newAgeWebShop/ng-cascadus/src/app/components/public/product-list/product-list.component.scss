@@ -1,0 +1,43 @@
+.link-black a {
+    color: black;
+  }
+
+  .link-black a:hover {
+    color: #0056b3;
+  }
+
+  .link-black .active {
+    color: #0056b3;
+  }
+
+  .divider-small {
+    width: 30px;
+    background-color: rgba(0, 0, 0, .1);
+    height: 3px;
+  }
+
+  .parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media only screen and (max-device-width: 1600px) {
+  .parallax {
+    background-attachment: scroll;
+    min-height: 600px;
+  }
+}
+
+.parallax5 {
+    min-height: 650px; 
+    background-image: url('/assets/svg/undraw_walking.svg');
+    image-rendering: optimizeSpeed;
+}
+.shadow-right {
+    box-shadow: 
+    inset 0 -4em 4em rgba(3,3,3,0.1), 
+    0 0  0 0px rgb(255,255,255),
+    0.4em 0.4em 1em rgba(3,3,3,0.3);
+}
+

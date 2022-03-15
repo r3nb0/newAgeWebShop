@@ -1,0 +1,108 @@
+<div class="m-0 p-0">
+    <div class="loading-overlay" *ngIf="isLoading">
+        <div class="text-center" aria-hidden="false" role="status">
+            <img alt="cascadus pinguin with rocket - loading" class="spinner-pinguin"
+                style="height: 100px; width: 100px;" src="../../../../assets/pinguin-rocket.png" />
+            <small class="grey-text d-block ">Jurim!</small>
+        </div>
+    </div>
+
+    <!-- add to cart floating button -->
+    <button class="floating-add-to-cart" (click)="scrollTo('order-product')">
+        <div class="m-auto p-1">
+            <i class="material-icons d-inline-block ">shopping_cart</i>
+            <span class="d-none d-md-inline-block">Add to cart</span>
+        </div>
+    </button>
+
+    <div *ngIf="renderHtml;else default">
+        <div class="text-center mt-5">
+            <section id="product">
+                <div [innerHtml]="pro.putanja"></div>
+            </section>
+            <section id="order-product">
+                <order-product [product]="pro"></order-product>
+            </section>
+        </div>
+    </div>
+    <ng-template #default>
+        <div class="parallax parallax4">
+            <section class="text-center mt-5 ">
+                <div class="mt-5 pt-5 z-depth-1 ">
+                    <div class="row mx-auto mt-5 p-3">
+                        <div class="col-xs-12 col-lg-6 pl-md-5 text-center shadow p-2 mx-auto px-auto card rounded">
+                            <h2
+                                class="text-center text-md-left text-lg-center product-name font-weight-bold dark-grey-text mb-1 ml-xl-0 ml-4">
+                                <strong class="">{{pro.naziv}}</strong>
+                            </h2>
+                            <img class="img img-responsive img-fluid w-100 h-auto" src="{{pro.thumbnail}}"
+                                alt="{{pro.naziv}} | {{pro.opis}}" />
+                        </div>
+                        <div class="col-xs-12 col-lg-5 text-center text-md-left">
+                            <span class="badge badge-info product mb-4 ml-xl-0 ml-4">top product</span>
+                            <h3 class="h3-responsive text-center text-md-left mb-5 ml-xl-0 ml-4">
+                                <span class="red-text font-weight-bold badge badge-pill badge-warning p-2">
+                                    <span class="dark-grey-text">Cijena: </span><strong
+                                        style="color: #666;">{{pro.cijena}}kn</strong>
+                                </span>
+
+                                <!-- <span class="grey-text badge badge- badge-danger">
+                            <small>
+                                <s>{{((pro.cijena) + 50)}}kn</s>
+                            </small>
+                        </span>  -->
+                            </h3>
+                            <div class="accordion md-accordion" id="accordionEx" role="tablist"
+                                aria-multiselectable="true">
+
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingOne1">
+                                        <a data-toggle="collapse" data-parent="#accordionEx" [href]="'#collapseOne1'"
+                                            aria-expanded="true" aria-controls="collapseOne1">
+                                            <h5 class="mb-0 dark-grey-text">
+                                                Opis proizvoda
+                                                <i class="fas fa-angle-down rotate-icon"></i>
+                                            </h5>
+                                        </a>
+                                    </div>
+                                    <div id="collapseOne1" class="collapse show" role="tabpanel"
+                                        aria-labelledby="headingOne1" data-parent="#accordionEx">
+                                        <div class="card-body">
+                                            <p>{{pro.opis}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingTwo2">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx"
+                                            [href]="'#collapseTwo2'" aria-expanded="false" aria-controls="collapseTwo2">
+                                            <h5 class="mb-0 dark-grey-text">
+                                                Karakteristike
+                                                <i class="fas fa-angle-down rotate-icon"></i>
+                                            </h5>
+                                        </a>
+                                    </div>
+                                    <div id="collapseTwo2" class="collapse" role="tabpanel"
+                                        aria-labelledby="headingTwo2" data-parent="#accordionEx">
+                                        <div class="card-body">
+                                            <p>{{pro.karakteristike}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section id="order-product">
+            <div class="row">
+                <div class="col-12">
+                    <order-product [product]="pro"></order-product>
+                </div>
+            </div>
+        </section>
+    </ng-template>
+</div>

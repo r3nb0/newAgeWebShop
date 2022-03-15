@@ -1,0 +1,42 @@
+BODY {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: arial,helvetica,geneva; TEXT-DECORATION: none
+}
+TD {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: arial,helvetica,geneva; TEXT-DECORATION: none
+}
+P {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: arial,helvetica,geneva; TEXT-DECORATION: none
+}
+B {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: arial,helvetica,geneva; TEXT-DECORATION: none
+}
+STRONG {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: arial,helvetica,geneva; TEXT-DECORATION: none
+}
+.copybd {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: arial,helvetica,geneva; TEXT-DECORATION: none
+}
+.copy10 {
+	FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: arial,helvetica,geneva; TEXT-DECORATION: none
+}
+.copy12 {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: arial, helvetica, geneva; TEXT-DECORATION: none
+}
+.copyfooter {
+	FONT-SIZE: 10px; COLOR: #ffffff; LINE-HEIGHT: 15px; FONT-FAMILY: arial,helvetica,geneva; TEXT-DECORATION: none
+}
+.linkfooter {
+	FONT-SIZE: 10px; COLOR: #ffffff; LINE-HEIGHT: 15px; FONT-FAMILY: arial,helvetica,geneva; TEXT-DECORATION: underline
+}
+.alignJustify {
+	TEXT-ALIGN: justify
+}
+A.link {
+	FONT-SIZE: 12px; COLOR: #ff0000; FONT-FAMILY: arial, helvetica, geneva; TEXT-DECORATION: underline
+}
+A.link:visited {
+	FONT-SIZE: 12px; COLOR: #ff0000; FONT-FAMILY: arial,helvetica,geneva; TEXT-DECORATION: underline
+}
+A.link:hover {
+	FONT-SIZE: 12px; COLOR: #ff0000; FONT-FAMILY: arial,helvetica,geneva; TEXT-DECORATION: underline
+}

@@ -1,0 +1,34 @@
+  .about-us-img {
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
+    max-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .about-us-img-1 {
+    background-image: url('../../../../assets/about-us/laptop.4bf2b774e877f5ba6cbd.jpg');
+    image-rendering: optimizeSpeed;
+  }
+  .about-us-img-2 {
+    background-image: url('../../../../assets/about-us/work.d543532d94a220f213d3.jpg');
+    image-rendering: optimizeSpeed;
+  }
+  .about-us-img-3 {
+    background-image: url('../../../../assets/about-us/robot.11859a50e2df928932b1.jpg');
+    image-rendering: optimizeSpeed;
+  }
+  .about-us-img-4 {
+    background-image: url('../../../../assets/about-us/gears.e72c9b222a3e4a4cc9ff.jpg');
+    image-rendering: optimizeSpeed;
+  }
+  .about-us-img-5 {
+    background-image: url('../../../../assets/about-us/computer.edf3a6ef59a9bfe0d3f1.jpg');
+    image-rendering: optimizeSpeed;
+  }
+
+  .shadow {
+    box-shadow: 0 8px 30px rgba(0,0,0,.3);
+  }

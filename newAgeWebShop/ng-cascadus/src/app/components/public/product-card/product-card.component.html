@@ -1,0 +1,30 @@
+<div class="product-card">
+    <div class="p-4">
+        <div class="card card-body text-center p-0 card-hover-zoom gray">
+
+            <div *ngIf="product.thumbnail != null;else generic_thumbnail">
+                <div class="card-img-top pb-2 imageHover" style="image-rendering: optimizeSpeed; background-size: cover; height: 30vh; background: url({{product.thumbnail}}) no-repeat center center/cover;"
+                    [routerLink]="'/product/' + product.id" alt="{{product.naziv}}"></div>
+            </div>
+            <ng-template #generic_thumbnail>
+                <img class="card-img-top pb-2 imageHover" style="height: 30vh;" src="../../../../assets/thumbnails/default.jpg"
+                    [routerLink]="'/product/' + product.id" alt="{{product.naziv}}">
+            </ng-template>
+
+            <h5 class="card-title pt-2">
+                <strong>
+                    <a [routerLink]="'/product/' + product.id">{{product.naziv}}</a>
+                    <hr class="px-2">
+                </strong>
+            </h5>
+            <p class="card-text px-2 line-word-stop">{{product.opis}}</p> 
+            <div class="card-footer mt-4">
+                <p class="float-right font-weight-bold mb-1 pb-2">{{product.cijena}}kn</p>
+                <a class="float-left material-tooltip-main" [routerLink]="'/product/' + product.id"
+                    data-toggle="tooltip" data-placement="top" title="Quick Look">
+                    <i class="fas fa-eye grey-text ml-3"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

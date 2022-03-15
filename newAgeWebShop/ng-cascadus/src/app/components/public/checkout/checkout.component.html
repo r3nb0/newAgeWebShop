@@ -1,0 +1,271 @@
+<section id="order-product" class="py-5 mt-5"
+    style="background: url('../../../../assets/svg/undraw_checkout.svg') no-repeat center center/contain;">
+    <div class="row m-0 p-0 mt-5">
+        <div class="col-12 text-center m-0 p-0">
+            <h3 class="pb-3">Vašu narudžbu izvršite ovdje:</h3>
+            <div id="orderForm" [formGroup]="buyerForm">
+                <div class="row text-center px-2">
+                    <div class="col-xs-12 col-md-6">
+
+                        <!-- FULL NAME -->
+                        <div class="">
+                            <span class="input-group-text border-dark bg-dark orange-text" id="account-circle-image">
+                                <i class="material-icons orange-text pull-left mr-1">account_circle</i>
+                                Ime i prezime:</span>
+                            <div class="input-group mb-3">
+                                <input required class="form-control d-block" type="text" minlength="2" maxlength="50"
+                                    placeholder="Josip" name="name" formControlName="name" id="name"
+                                    aria-describedby="name">
+                                <input required class="form-control d-block" type="text" minlength="2" maxlength="50"
+                                    placeholder="Horvat" name="surname" formControlName="surname" id="surname"
+                                    aria-describedby="surname">
+                            </div>
+                        </div>
+
+                        <!-- EMAIL -->
+                        <div class="">
+                            <span class="input-group-text border-dark bg-dark orange-text" id="email">
+                                <i class="material-icons orange-text pull-left mr-1">email</i>Email:</span>
+                            <div class="input-group mb-3">
+                                <input required type="email" class="form-control" minlength="6" maxlength="50"
+                                    placeholder="myEmail@mail.com" name="email" formControlName="email" id="email"
+                                    aria-describedby="email">
+                            </div>
+                        </div>
+
+                        <!-- PHONE NUMBER -->
+                        <div class="">
+                            <span class="input-group-text border-dark bg-dark orange-text" id="phone-number">
+                                <i class="material-icons orange-text pull-left mr-1">phone</i>
+                                Kontakt broj:</span>
+                            <div class="input-group mb-3">
+                                <input required type="tel" class="form-control" minlength="8" maxlength="12"
+                                    placeholder="0987654321" name="phone" formControlName="phone" id="phone"
+                                    aria-describedby="phone-number">
+                            </div>
+                        </div>
+
+                        <!-- STREET -->
+                        <div class="card p-auto mb-3">
+                            <span class="input-group-text border-dark bg-dark orange-text" id="address">
+                                <i class="material-icons orange-text pull-left mr-1">home</i>Adresa:</span>
+                            <div class="input-group">
+                                <input required type="text" class="form-control" minlength="2" maxlength="50"
+                                    placeholder="Zagrebačka cesta" name="street" formControlName="street" id="street"
+                                    aria-describedby="address">
+
+                                <input required type="text" class="form-control" minlength="1" maxlength="5"
+                                    placeholder="12b" name="houseNumber" formControlName="houseNumber" id="houseNumber"
+                                    aria-describedby="address">
+                            </div>
+                        </div>
+
+                        <!-- POST CODE -->
+                        <div class="">
+                            <span class="input-group-text border-dark bg-dark orange-text" id="post-code">
+                                <i class="material-icons orange-text pull-left mr-1">money</i>Poštanski broj:</span>
+                            <div class="input-group mb-3">
+                                <input required type="number" min="10000" max="53296" class="form-control"
+                                    placeholder="10000" name="postCode" formControlName="postCode" id="postCode"
+                                    aria-describedby="post-code">
+                            </div>
+                        </div>
+
+
+                        <!-- CITY -->
+                        <div class="">
+                            <span class="input-group-text border-dark bg-dark orange-text" id="city">
+                                <i class="material-icons orange-text pull-left mr-1">account_balance</i>Grad:</span>
+                            <div class="input-group mb-3">
+                                <input required type="text" class="form-control" minlength="3" maxlength="50"
+                                    placeholder="Zagreb" name="city" formControlName="city" id="city"
+                                    aria-describedby="city">
+                            </div>
+                        </div>
+
+                        <!-- COUNTRY -->
+                        <!-- <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text border-dark bg-dark orange-text" id="country">
+                                    <i class="material-icons orange-text pull-left">flag</i>Country:</span>
+                            </div>
+                            <input required type="text" class="form-control" minlength="10" maxlength="50"
+                                placeholder="Hrvatska" name="country" formControlName="country" id="country"
+                                aria-describedby="country">
+                        </div> -->
+
+                        <!-- PAYMENT METHOD -->
+                        <div class="card p-auto pb-2 mb-3">
+                            <span class="input-group-text border-dark bg-dark orange-text" id="nacinPlacanja">
+                                <i class="material-icons orange-text pull-left mr-1">local_shipping</i>Način
+                                plaćanja:</span>
+                            <div class="form-check d-inline">
+                                <input class="form-check-input checked" id="paymentMethodDelivery" checked
+                                    name="paymentMethod" type="radio" value="OnDelivery"
+                                    formControlName="paymentMethod">
+                                <label class="form-check-label lead" for="paymentMethodDelivery">
+                                    Plaćanje pouzećem
+                                </label>
+                            </div>
+                            <div class="form-check d-inline">
+                                <input class="form-check-input" id="paymentMethodNow" name="paymentMethod"
+                                    type="radio" value="CorvusPay" formControlName="paymentMethod">
+                                <label class="form-check-label lead" for="paymentMethodNow">
+                                    Plati internet bankarstvom
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <!-- MESSAGE -->
+                        <div class="card p-auto">
+                            <span class="input-group-text border-dark bg-dark orange-text">
+                                <i class="material-icons orange-text mr-1 pull-left">gesture</i>Poruka
+                                prodavaču:</span>
+                            <div class="input-group">
+                                <textarea class="form-control" minlength="0" formControlName="message" maxlength="250"
+                                    aria-label="textarea" placeholder="Ovdje možete ostaviti poruku za prodavača..."
+                                    aria-describedby="message-to-seller"></textarea>
+                            </div>
+                        </div>
+                        <br>
+
+                        <!-- "*|CART|*" REVIEW -->
+                        <div id="cartEmptyCard" *ngIf="cartEmpty || numOfCartItems == 0;else cartItems">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="my-auto pt-2">Naručujete:</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="p-2 text-center mb-2">
+                                        <div
+                                            class="d-flex justify-content-between alert alert-danger align-items-center">
+                                            <p class="red-text">U košarici se ne nalaze proizvodi. Nije moguće nastaviti
+                                                s naplatom!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ng-template #cartItems>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="my-auto pt-2">Naručujete:</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div [id]="'cartItem' + item.id" class="card p-2 text-center mb-2"
+                                        *ngFor="let item of cartItemsArray">
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p><strong class="font-weight-bold">{{item.kolicina}}x</strong> <a
+                                                            [routerLink]="'/product/' + item.id">{{item.naziv}}
+                                                        </a>({{item.cijena |number: '1.2-2'}} kn)</p>
+                                                    <p>Cijena: <span>{{(item.cijena * item.kolicina) |number: '1.2-2'}}
+                                                            kn</span></p>
+
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-sm btn-outline-info m-0 py-1 px-2"
+                                                            (click)="onDecreaseCartItem(item.id)">
+                                                            <i
+                                                                class="material-icons orange-text p-0">remove</i></button>
+                                                        <button class="btn btn-sm btn-outline-success m-0 py-1 px-2"
+                                                            (click)="onIncreaseCartItem(item.id)">
+                                                            <i class="material-icons orange-text p-0">add</i></button>
+                                                        <button class="btn btn-sm btn-outline-danger m-0 py-1 px-2"
+                                                            (click)="onRemoveCartItem(item.id)">
+                                                            <i class="material-icons orange-text p-0">delete</i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <p>Ukupna cijena svih proizvoda: <b id="cartTotalNoShipping">{{totalPriceNoShipping
+                                            |number: '1.2-2'}}</b>
+                                        kn</p>
+                                    <p>Cijena usluge slanja paketa: <b class="idShippingCost">{{shippingCost |number:
+                                            '1.2-2'}}</b>kn</p>
+
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-xs-12">
+                                            <p class="d-inline mr-3">Popust kod:</p>
+                                            <div class="d-inline">
+                                                <label class="switch">
+                                                    <input type="checkbox" (change)="changeDiscountCodeBlockState()"
+                                                        id="cbDiscountCodeSwitch">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-12">
+                                            <div id="divDiscountCode" style="display: none;">
+                                                <div class="row">
+                                                    <input type="text" id="txtDiscountCode"
+                                                        class="col-md-6 col-xs-12 mx-2" aria-label="Popust kod">
+                                                    <button
+                                                        class="btn btn-sm btn-outline-elegant col-md-6 col-xs-12 mx-2"
+                                                        type="button" (click)="checkCouponCode()">Provjeri</button>
+                                                    <div class="col-12 text-center">
+                                                        <label id="lblOldPrice" style="display: none;"></label>
+                                                        <label id="lblDiscountStatus"></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="loading-overlay-for-this-div" style="z-index: 1 !important;"
+                                                *ngIf="discountCodeLoading && discountCodeInputShown">
+                                                <div class="d-flex justify-content-center" aria-hidden="false"
+                                                    role="status">
+                                                    <img alt="cascadus pinguin with rocket - loading"
+                                                        class="spinner-pinguin m-0 p-0 align-self-center"
+                                                        src="../../../../assets/pinguin-rocket.png" width="75px"
+                                                        height="75px" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>Ukupno: <b id="cartTotal">{{totalPrice |number: '1.2-2'}}</b> kn</p>
+                                </div>
+                            </div>
+                            <div *ngIf="!isFormCorrect" class="alert alert-danger m-1 p-1">
+                                <b class="red-text">Jedno ili više polja nisu ispravno popunjeni. Molimo Vas da
+                                    provjerite
+                                    podatke, a zatim pokušajte ponovo.</b>
+                            </div>
+                        </ng-template>
+
+                        <div *ngIf="cartEmpty || numOfCartItems == 0;else payButton">
+                            <button type="button" disabled class="btn btn-lg btn-elegant">
+                                <i class="material-icons orange-text pull-left">payment</i>
+                                <p class="orange-text">Naruči odmah</p>
+                            </button>
+                        </div>
+                        <ng-template #payButton>
+                            <button type="button" id="instantOrderBtn" (click)="OnPlaceInstantOrder()"
+                                class="btn btn-lg btn-elegant" style="width: 50%;">
+
+                                <div *ngIf="!sending; else isSending">
+                                    <i class="material-icons orange-text pull-left">payment</i>
+                                    <p class="orange-text">Naruči odmah</p>
+                                </div>
+                                <ng-template #isSending>
+                                    <i class="material-icons orange-text pull-left">payment</i>
+                                    <p class="orange-text"><i class="fa fa-spinner fa-spin"></i>Slanje...</p>
+                                </ng-template>
+                            </button>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

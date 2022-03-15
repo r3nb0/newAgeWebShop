@@ -1,0 +1,18 @@
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="orange border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">Welcome to Cascadus Admin Panel </div>
+        <div class="list-group list-group-flush card ">
+            <a [routerLink]="'/admin/home'" class="list-group-item list-group-item-action orange-text bg-dark">Dashboard</a>
+            <a [routerLink]="'/admin/categories'" class="list-group-item list-group-item-action orange gray-text">Categories</a>
+            <a [routerLink]="'/admin/products'" class="list-group-item list-group-item-action orange-text bg-dark">Products</a>
+            <a [routerLink]="'/admin/buyers'" class="list-group-item list-group-item-action orange">Buyers</a>
+            <a [routerLink]="'/admin/invoices'" class="list-group-item list-group-item-action orange-text bg-dark">Orders</a>
+            <a [routerLink]="'/admin/discounts'" class="list-group-item list-group-item-action orange">Discount Coupons</a>
+        </div> 
+        <div class="m-3 justify-content-center text-center" style="position: relative; top: 47vh; bottom: 0px; left: 0px;">
+            <button (click)="logout()" class="btn btn-sm btn-outline-elegant" id="logoutButton">logout</button>
+            <small class="d-block">version 1.0</small>
+        </div>
+    </div>
+</div>

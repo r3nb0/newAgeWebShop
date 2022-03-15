@@ -1,0 +1,103 @@
+<nav class="navbar navbar-expand-lg navbar-light orange m-0"
+  style="top:0; left: 0; right: 0; position: fixed; z-index: 1000; max-width: 100%;">
+  <a class="navbar-brand logo" href="/home">
+    <img src="assets/logo.png" width="100%" height="100%" class="d-inline-block align-top logo-image" alt="Cascadus shop logo">
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarHamburger"
+    aria-controls="navBarHamburger" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navBarHamburger">
+    <ul class="navbar-nav p-0 mt-2 mt-lg-0 text-nowrap">
+      <li class="nav-item">
+        <a class="nav-link " data-toggle="collapse" data-target="#navBarHamburger" [routerLink]="'/'">
+          <h4 class="nav-button">Početna</h4>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " data-toggle="collapse" data-target="#navBarHamburger" [routerLink]="'/products'">
+          <h4 class="nav-button">Proizvodi</h4>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link " data-toggle="collapse" data-target="#navBarHamburger" [routerLink]="'/faq'">
+          <h4 class="nav-button">FAQ</h4>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link " data-toggle="collapse" data-target="#navBarHamburger" [routerLink]="'/contact'">
+          <h4 class="nav-button">Kontakt</h4>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link " data-toggle="collapse" data-target="#navBarHamburger" [routerLink]="'/about'">
+          <h4 class="nav-button">O nama</h4>
+        </a>
+      </li>
+      <li class="nav-item " data-toggle="collapse" data-target="#navBarHamburger" *ngIf="!isCartEmpty">
+        <a data-toggle="modal" data-target="#cartModal" class="nav-link btn btn-sm p-1 roudend nav-cart"
+          (click)="showCartModal(true)">
+          <i class="material-icons dark-text pull-right">shopping_cart</i><b>Košarica ({{numOfCartItems}})</b></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div id="cartModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="shoppingCart">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Vaša košarica sadrži:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="red-text">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Broj stvari u košarici: {{numOfCartItems}}</p>
+        <div class="overflow-auto">
+          <div *ngFor="let item of cartItemsArray" class="p-1">
+            <div class="card p-2 text-center">
+              <strong><a [routerLink]="'/product/' + item.id">{{item.naziv}}</a></strong>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <p class="align-self-end">Količina: <span>{{item.kolicina}} kom</span></p>
+                </div>
+                <div>
+                  <p class="align-self-end">Cijena: <span>{{item.cijena}} kn</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- shipping -->
+          <div class="card p-2 text-center">
+            <strong>Slanje paketa</strong>
+            <div class="d-flex justify-content-between">
+              <div>
+                <p class="align-self-end">Količina: 1 kom</p>
+              </div>
+              <div>
+                <p class="align-self-end">Cijena: <span>30 kn</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center m-0 p-0">
+        <div class="row">
+          <div class="col-12 text-center">
+            <p>Ukupno: {{getTotalPrice() |number: '1.2-2'}} kn</p>
+          </div>
+              <button type="button" class="btn btn-sm btn-outline-danger m-auto p-auto mb-2 col-12"
+                data-dismiss="modal">Zatvori</button>
+              <button type="button" class="btn btn-sm btn-outline-warning m-auto p-auto mb-2 col-12"
+                (click)="onEmptyCartItems()">Isprazni košaricu</button>
+              <button type="button" id="btnCheckoutNaplata" class="btn btn-sm btn-outline-elegant m-auto p-auto mb-2 col-12"
+                (click)="onPayForCartItems()">Naplata</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,112 @@
+<div class="sticky-bottom font-small bg-dark m-auto cascadus-footer">
+    <div class="row m-0 p-4">
+
+        <div class="col-sm-12 col-md-6 px-3 ">
+            <form [formGroup]="subscribeForm" (ngSubmit)="subscribe()">
+                <div class="mt-3">
+                    <h4>Pretplatite se</h4>
+                    <hr class="orange">
+                    <div class="input-group">
+                        <input type="email" formControlName="email" id="subscriberEmail" class="form-control m-auto"
+                            placeholder="Vaša email adresa">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-elegant m-auto orange-text">Pretplati
+                                me</button>
+                        </span>
+                    </div>
+                    <small>Pretplatom prihvaćate da Vam Cascadus šalje obavijesti o novim proizvodima i ostalih
+                        informacija vezanih uz Cascadus.</small>
+                </div>
+            </form>
+            <div id="payment" class="row">
+                <div class="col-lg-6 col-xs-12">
+                    <div class="corvus-pay-card my-2 mx-auto p-auto rounded img-responsive"></div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <a class="badge badge-warning m-1" [routerLink]="'/privacy-statement'">
+                        <small class="black-text p-0 m-0">Politika o privatnosti</small>
+                    </a>
+                    <a class="badge badge-warning m-1" [routerLink]="'/payment-statement'">
+                        <small class="black-text p-0 m-0">Sigurnost o online plaćanju</small>
+                    </a>
+                    <a class="badge badge-warning m-1" [routerLink]="'/purchase-statement'">
+                        <small class="black-text p-0 m-0">Uvjeti kupnje</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-3 px-3">
+            <h4 class="text-center mt-3">Potražite nas online</h4>
+            <hr class="orange">
+            <div class="m-0 p-0 d-flex justify-content-around">
+                <a target="_null" rel="noopener noreferrer" href="https://www.facebook.com" class="fb-ic mx-auto m-2">
+                    <i class="fab fa-facebook-f fa-lg orange-text fa-2x"></i>
+                </a>
+                <a target="_null" rel="noopener noreferrer" href="https://www.instagram.com/cascadus1/"
+                    class="ins-ic mx-auto m-2">
+                    <i class="fab fa-instagram fa-lg orange-text fa-2x"></i>
+                </a>
+                <a target="_null" rel="noopener noreferrer" href="https://www.twitter.com" class="tw-ic mx-auto m-2">
+                    <i class="fab fa-twitter bg-transparent fa-lg orange-text fa-2x"></i>
+                </a>
+
+
+                <!-- <div class="col-xs-4 col-md-12 d-none d-md-flex justify-content-center align-items-center my-3">
+                    <a target="_null" rel="noopener noreferrer" href="https://www.facebook.com"
+                        class="fb-ic">
+                        <i class="fab fa-facebook-f fa-lg orange-text fa-2x"></i>
+                    </a>
+                </div>
+
+                <div class="col-xs-4 col-md-12 d-none d-md-flex justify-content-center align-items-center my-3">
+                    <a target="_null" rel="noopener noreferrer" href="https://www.instagram.com/cascadus1/"
+                        class="ins-ic">
+                        <i class="fab fa-instagram fa-lg orange-text fa-2x"></i>
+                    </a>
+                </div>
+
+                <div class="col-xs-4 col-md-12 d-none d-md-flex justify-content-center align-items-center my-3">
+                    <a target="_null" rel="noopener noreferrer" href="https://www.twitter.com"
+                        class="tw-ic">
+                        <i class="fab fa-twitter bg-transparent fa-lg orange-text fa-2x"></i>
+                    </a>
+                </div> -->
+            </div>
+        </div>
+
+
+        <div class="col-sm-12 col-md-3 px-3">
+            <!-- <h4>O nama</h4>
+            <hr class="orange">
+            <p class="my-2">Dobro došli u Cascadus. Raznolika priroda naših proizvoda omogućuje nam posjedovanje širokog
+                sprektra stručnosti unutar tvrtke, prihvaćanje unakrsnog prašivanja ideja i njihovo aktuliziranje.
+                Svakim danom nastavljamo rasti i dodajemo nove pothvate u Cascadus timu kako bi našim partnerima i
+                klijenmitzma dali vrijednost pržanjem inovatnivnih proizvoda kao i kvalitetnih proizvodnih usluga.
+            </p> -->
+            <div class="row py-3">
+                <div class="col-12 my-2 d-flex justify-content-center my-auto align-items-center">
+                    <div class="my-2">
+                        <i class="material-icons mx-auto md-48 d-inline">email</i>
+                        <a class="mx-auto d-inline" [href]="'mailto:podrska@cascadus.hr'">podrska@cascadus.hr</a>
+                    </div>
+                </div>
+                <div class="col-12 my-2 d-flex justify-content-center my-auto align-items-center">
+                    <div class="my-2">
+                        <i class="material-icons m-auto md-48 d-inline">location_on</i>
+                        <address class="mx-auto d-inline">
+                            Breg 22, 10362
+                            <br />Kašina, Hrvatska
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center orange text-center m-0 p-0">
+        <div class="col"></div>
+        <small class="black-text my-1 col-md-12 col-xs-12">Sva prava pridržana - Cascadus {{year}} </small>
+        <!-- <small class="black-text my-1 col">Website by <a target="_null" rel="noopener noreferrer"
+                href="https://www.instagram.com/r3nb0" class="text-dark" alt="Website made by r3web">r3web</a> </small> -->
+    </div>
+</div>

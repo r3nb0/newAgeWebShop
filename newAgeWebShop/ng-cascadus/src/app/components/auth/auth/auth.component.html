@@ -1,0 +1,33 @@
+<div class="flex-wrap mt-5 py-5 bg-dark">
+  <fieldset>
+    <form class="mt-5 mb-5" [formGroup]="accountForm" (ngSubmit)="submit()" id="accountForm" class="form-group">
+      <!-- <div *ngIf="invalidRegistration" class="alert alert-danger m-auto">
+        <p>Molimo Vas da provjerite podatke koje ste unijeli prilikom registracije.</p>
+        <b>{{errorMessage}}</b>
+      </div> -->
+      <div *ngIf="invalidLogin" class="alert alert-danger m-auto">
+        <p>Neispravno korisničko ime ili lozinka</p>
+      </div>
+      <input type="radio" name="rg" id="sign-in" checked />
+      <!-- <input type="radio" name="rg" id="sign-up" />
+      <input type="radio" name="rg" id="reset" /> -->
+
+      <label for="sign-in">Prijava</label>
+      <!-- <label for="sign-up">Registracija</label>
+      <label for="reset">Reset</label> -->
+
+      <input id="username" formControlName="username" value="mihael"
+       class="sign-up sign-in reset" type="email"
+        placeholder="Korisničko ime" />
+
+      <input id="password" formControlName="password" value="lozinka"
+       class="sign-up sign-in" type="password" placeholder="Lozinka" />
+ 
+<!--    
+       <input id="repeatPassword" formControlName="repeatPassword" class="sign-up" type="password"
+        placeholder="Ponovite lozinku" />  -->
+
+      <button id="submitBtn">Submit</button>
+    </form>
+  </fieldset>
+</div>

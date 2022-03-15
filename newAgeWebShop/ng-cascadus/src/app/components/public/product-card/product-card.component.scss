@@ -1,0 +1,17 @@
+.card-hover-zoom {  
+    -moz-transform: scale(1); 
+    -webkit-transform: scale(1); 
+    transform: scale(1); 
+    transition:0.4s ease all; 
+    -webkit-transition:0.4s ease all; 
+    -moz-transition:0.4s ease all;
+}
+
+.card-hover-zoom:hover { 
+    -moz-transform: scale(1.05); 
+    -webkit-transform: scale(1.05); 
+    transform: scale(1.05); 
+}
+.imageHover:hover {
+    cursor: pointer;
+}
