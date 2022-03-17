@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  domain: "https://localhost:44326/api/",
+  domain: 'https://localhost:44326/api/',
   //domain: "https://api.cascadus.hr/api/",
-  tokenKey: "jwt",
-  roleKey: "role"
+  tokenKey: 'jwt',
+  roleKey: 'role',
 };
 
 /*

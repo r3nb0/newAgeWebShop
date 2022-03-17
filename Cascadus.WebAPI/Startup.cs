@@ -38,6 +38,8 @@ namespace Cascadus.WebAPI
                     builder.WithOrigins(
                         "https://localhost:44326",
                         "http://localhost:44326",
+                        "http://majabale-001-site1.gtempurl.com",
+                        "https://majabale-001-site1.gtempurl.com",
                         "http://localhost:4200",
                         "https://localhost:4200",
                         "http://cascadus.hr",
@@ -67,7 +69,7 @@ namespace Cascadus.WebAPI
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
 
-                        ValidIssuer = "https://api.cascadus.hr",
+                        ValidIssuer = "http://majabale-001-site1.gtempurl.com",
                         ValidAudience = "https://cascadus.hr",
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSigningKey.Key))
                     };

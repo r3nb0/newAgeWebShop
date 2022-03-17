@@ -1,4 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage;
+using System;
 
 namespace Cascadus.Model.Models.DBModels
 {
@@ -6,11 +9,18 @@ namespace Cascadus.Model.Models.DBModels
     {
         public CascadusDEVContext()
         {
+            try
+            {
+                var databaseCreator = (Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator);
+                databaseCreator.CreateTables();
+            }
+            catch (Exception ex){}
         }
 
         public CascadusDEVContext(DbContextOptions<CascadusDEVContext> options)
             : base(options)
         {
+
         }
 
         public virtual DbSet<KategorijaProizvoda> KategorijaProizvoda { get; set; }
